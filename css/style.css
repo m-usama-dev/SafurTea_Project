@@ -69,7 +69,7 @@ button {
   box-shadow: none;
 }
 .nav-left img {
-  width: 165px;
+  width: 285px;
   height: auto;
   object-fit: contain;
 }
@@ -387,7 +387,7 @@ button {
 /* ---------- OUR VALUES ---------- */
 .values-section {
   position: relative;
-  min-height: 570px;
+  min-height: 470px;
   overflow: hidden;
   padding: 52px 5% 130px;
   background: #fff2df;
@@ -447,7 +447,6 @@ button {
   margin: 9px auto 0;
   max-width: 235px;
   font-size: 13px;
-  font-weight: 600;
   line-height: 1.35;
 }
 .values-leaf {
@@ -672,6 +671,7 @@ section {
   max-width: 1324px;
   gap: 69px;
   align-items: center;
+  margin-top: 0;
 }
 .about-img-wrap {
   position: relative;
@@ -690,14 +690,14 @@ section {
   color: #25120f;
   line-height: 1.4;
   margin: 17px 0 0;
-  font-weight: 600;
+  /* font-weight: 600; */
   font-size: 11px;
 }
 .about-text .eyebrow {
   color: #783b38;
   letter-spacing: 0;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 800;
 }
 .about-text .section-title {
   margin-top: 22px;
@@ -705,7 +705,7 @@ section {
   font-family: "Poppins", sans-serif;
   font-size: clamp(21px, 2vw, 28px);
   line-height: 1.28;
-  font-weight: 800;
+  font-weight: 500;
 }
 .about-btn {
   display: inline-flex;
@@ -739,7 +739,7 @@ section {
 }
 
 /* ---------- VIDEO SPOTLIGHT ---------- */
-.video-spotlight {
+/* .video-spotlight {
   overflow: hidden;
   padding: 86px 0 144px;
   background: #fff2df;
@@ -878,7 +878,7 @@ section {
   .spotlight-next {
     right: 18%;
   }
-}
+} */
 
 /* ---------- FEATURED PRODUCT ---------- */
 .featured {

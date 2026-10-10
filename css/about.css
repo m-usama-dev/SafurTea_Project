@@ -34,7 +34,7 @@
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 10px 40px rgba(59, 18, 18, 0.12);
-  background: var(--cream-2) url('../assets/images/leaf-pattern.png') repeat;
+  background: #ffffff;
   background-size: 160px 160px;
 }
 .about-story-img img {
