@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safura Tea </title>
+  <meta name="description" content="Safura Tea offers premium, naturally sourced tea blends — rich in flavour and crafted with tradition. Shop online, delivered fresh across Pakistan.">
+  <meta name="theme-color" content="#3b1212">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="assets/images/Logo-3.webp" alt="Safura Tea logo">
+     
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="cart-btn" aria-label="Cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1" />
+          <circle cx="20" cy="21" r="1" />
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+        </svg>
+        <span class="cart-count">0</span>
+      </button>
+      <div class="hamburger" id="hamburger" role="button" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <img src="assets/images/home.png" alt="Safura Tea premium blend pack">
+    </div>
+
+    <div class="hero-offer-badge">
+      <span class="offer-text-line1">Offer Now</span>
+      <span class="offer-text-line2"><span class="offer-num" id="offerNum">20</span>% Off</span>
+    </div>
+
+    <div class="hero-overlay">
+
+      <h1>The Tea That Brings Every <em>  Relationship </em> Closer</h1>
+      <div class="hero-btns">
+        <a href="shop.html" class="btn-gold">Shop Now</a>
+        <a href="about.html" class="btn-outline">Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about">
+    <div class="section-inner about-grid">
+      <div class="about-img-wrap">
+        <img src="assets/images/product-1.png" alt="Safura Tea pack">
+        <!-- <div class="about-badge">
+          <strong>425g</strong>
+          <span>Net Weight</span>
+        </div> -->
+      </div>
+      <div class="about-text">
+        <div class="eyebrow">Our Story</div>
+        <h2 class="section-title">Brewed with Tradition,<br>Crafted for Today</h2>
+        <p>Safura Tea began with a simple belief: the best conversations happen over a good cup of tea. We source
+          premium leaves and blend them with care, staying true to the rich, full-bodied taste that has connected
+          families for generations. Every pack is a promise of quality, warmth, and honesty.</p>
+        <a href="about.html" class="about-link"><button class="about-btn">More →</button></a>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ================= CONTACT ================= -->
+  <section class="contact-section" id="contact">
+    <div class="section-inner contact-grid">
+    </div>
+    <div class="contact-form-card">
+      <div class="contact-form-card-left">
+        <div class="contact-left-img">
+          <img src="./assets/images/product-1.png" alt="Safura Tea premium pack" loading="lazy">
+        </div>
+      </div>
+
+
+      <div class="contact-form-card-right">
+        <!-- <div class="eyebrow">Get In Touch</div> -->
+        <h2 class="section-title">Contact Us</h2>
+        <p class="contact-sub">Have a question or want to place an order? We'd love to hear from you.</p>
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" name="email" placeholder="you@example.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="number" name="phone" placeholder="+92 3XX XXXXXXX">
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <input type="text" name="subject" placeholder="How can we help?">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Comments / Message</label>
+            <textarea name="message" placeholder="Write your message here..." required></textarea>
+          </div>
+          <button type="submit" class="send-btn">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+
+  
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <img src="assets/images/ReshtooTea_Urdu.webp" alt="Safura Tea logo" loading="lazy">
+        </div>
+        <p class="footer-desc">Premium quality tea, blended with tradition and care — bringing people closer, one cup at
+          a time.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="about.html">About</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">Delivery Info</a>
+        <a href="#">Track Order</a>
+        <a href="#">FAQs</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get in Touch</h4>
+        <p>Usman Tower, near Nasirpur, Main GT Road, Peshawar KP</p>
+        <p>+92 320 8378383</p>
+        <p>Info@safuratea.com</p>
+      </div>
+
+      <div class="footer-right">
+        <div class="location">
+          <h4>Our Location</h4>
+          <a href="https://www.google.com/maps/search/?api=1&query=Usman+Tower+near+Nasirpur+Main+GT+Road+Peshawar+KP"
+            target="_blank" rel="noopener noreferrer" class="map-link">
+            <div class="map-container">
+              <iframe
+                src="https://maps.google.com/maps?q=Usman+Tower+near+Nasirpur+Main+GT+Road+Peshawar+KP&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%" height="150" style="border:0; pointer-events: none;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+              <div class="map-overlay">
+                <span class="map-pin"></span>
+                <span class="map-label">Open in Google Maps</span>
+              </div>
+            </div>
+          </a>
+          <p class="address-text">Usman Tower, near Nasirpur, Main GT Road, Peshawar KP</p>
+        </div>
+
+        <div class="barcode">
+          <h4>Scan for Details</h4>
+          <div class="barcode-img">
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&bgcolor=FAF5EA&color=3B1F2B&data=Safura%20Tea%0AProduct%3A%20Premium%20Tea%20500g%0ALocation%3A%20Usman%20Tower%2C%20near%20Nasirpur%2C%20Main%20GT%20Road%2C%20Peshawar%20KP%0APhone%3A%20%2B92%20300%200000000%0AEmail%3A%20hello%40safuratea.pk"
+              alt="Safura Tea QR Code" width="160" height="160">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Safura Tea. All rights reserved.</span>
+      <span>Designed with care for tea lovers.</span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast">Message sent successfully!</div>
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
