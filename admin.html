@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safura Tea — Admin Panel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<div class="admin-header">
+  <h1>Safura Tea — Admin Panel</h1>
+  <a href="index.html">View Website</a>
+</div>
+
+<div class="admin-container">
+
+  <div class="card">
+    <h2>Hero Offer Settings</h2>
+    <p class="subtitle">Change the offer text displayed on the hero section. Updates instantly on the website.</p>
+
+    <div class="form-group">
+      <label>Discount Percentage (%)</label>
+      <input type="number" id="offerNumber" min="1" max="99" value="10">
+    </div>
+
+    <button class="save-btn" id="saveBtn">Save Offer</button>
+
+    <div class="preview-box">
+      <div class="discount" id="previewDiscount">Offer Now — 10% Off</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast">Offer saved successfully!</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  /* NOTE: This is a basic front-end gate only — it stops casual visitors,
+     not a determined person (anyone can read this password from the page
+     source). Real protection needs a server-side login. See chat notes. */
+  var ADMIN_PASSWORD = 'safura2026';
+  var authed = sessionStorage.getItem('safura_admin_ok') === '1';
+
+  if (!authed) {
+    var entered = prompt('Enter admin password to continue:');
+    if (entered !== ADMIN_PASSWORD) {
+      document.querySelector('.admin-container').innerHTML =
+        '<div class="card"><h2>Access Denied</h2><p class="subtitle">Incorrect password.</p></div>';
+      return;
+    }
+    sessionStorage.setItem('safura_admin_ok', '1');
+  }
+
+  var STORAGE_KEY = 'safura_offer';
+
+  // Load saved data
+  var saved = null;
+  try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch (e) {}
+
+  if (saved) {
+    document.getElementById('offerNumber').value = saved.number || 10;
+  }
+
+  // Live preview
+  function updatePreview() {
+    var n = document.getElementById('offerNumber').value;
+    document.getElementById('previewDiscount').textContent = 'Offer Now — ' + n + '% Off';
+  }
+
+  document.getElementById('offerNumber').addEventListener('input', updatePreview);
+
+  updatePreview();
+
+  // Save
+  document.getElementById('saveBtn').addEventListener('click', function () {
+    var data = {
+      number: document.getElementById('offerNumber').value
+    };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+
+    var toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(function () { toast.classList.remove('show'); }, 2500);
+  });
+});
+</script>
+</body>
+</html>
