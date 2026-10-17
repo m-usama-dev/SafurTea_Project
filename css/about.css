@@ -652,21 +652,15 @@
 }
 .partner-logo {
   flex: 0 0 auto;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  background: var(--cream);
-  box-shadow: 0 8px 28px rgba(59, 18, 18, 0.14);
+  width: 155px;
+  height: 155px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 .partner-logo:hover {
   transform: translateY(-6px) scale(1.05);
-  box-shadow: 0 14px 34px rgba(59, 18, 18, 0.2);
 }
 .partner-logo img {
   width: 100%;
