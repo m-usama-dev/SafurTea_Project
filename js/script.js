@@ -26,11 +26,13 @@ document.addEventListener('DOMContentLoaded', function () {
   var ceoMessageToggle = document.getElementById('ceoMessageToggle');
   var ceoMessageFull = document.getElementById('ceoMessageFull');
   if (ceoMessageToggle && ceoMessageFull) {
+    var ceoSection = document.getElementById('ceo-message');
     ceoMessageToggle.addEventListener('click', function () {
       var expanded = ceoMessageToggle.getAttribute('aria-expanded') !== 'true';
       ceoMessageToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
       ceoMessageFull.hidden = !expanded;
       ceoMessageToggle.textContent = expanded ? 'Close Full Message' : 'Read Full Message';
+      if (ceoSection) ceoSection.classList.toggle('is-expanded', expanded);
     });
   }
 
@@ -277,6 +279,18 @@ document.addEventListener('DOMContentLoaded', function () {
       addToCart({ id: id, name: name, price: price, img: img });
     });
   });
+
+  /* ---------- Shop product list disclosure ---------- */
+  var readMoreBtn = document.getElementById('readMoreBtn');
+  var shopProductsMore = document.getElementById('shopProductsMore');
+  if (readMoreBtn && shopProductsMore) {
+    readMoreBtn.addEventListener('click', function () {
+      var expanded = readMoreBtn.getAttribute('aria-expanded') !== 'true';
+      readMoreBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      shopProductsMore.hidden = !expanded;
+      readMoreBtn.textContent = expanded ? 'Show Less' : 'Read More';
+    });
+  }
 
   /* ---------- Wire up cart icon in navbar ---------- */
   document.querySelectorAll('.cart-btn').forEach(function (btn) {

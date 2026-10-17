@@ -196,6 +196,7 @@ button {
   }
 }
 .hero-overlay {
+  margin-top: 90px;
   position: absolute;
   inset: 0;
   z-index: 3;
