@@ -69,8 +69,8 @@ button {
   box-shadow: none;
 }
 .nav-left img {
-  width: 285px;
-  height: auto;
+  width: 85px;
+  height: 85px;
   object-fit: contain;
 }
 .nav-links {
