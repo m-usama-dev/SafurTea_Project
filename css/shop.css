@@ -27,7 +27,7 @@
   background: var(--cream);
 }
 .shop-products-grid {
-  max-width: 1100px;
+  max-width: 1120px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -166,7 +166,7 @@
   background: var(--maroon);
   color: var(--cream);
   padding: 8px 14px;
-  border-radius: 6px;
+  border-radius: 16px;
   font-weight: 500;
   font-size: 12px;
   border: none;
