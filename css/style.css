@@ -295,19 +295,20 @@ button {
 
 /* ---------- HOME HERO ---------- */
 .home-page .hero {
-  height: min(100vh, 768px);
+  height: min(100svh, 768px);
   min-height: 500px;
   padding: 0;
   background: #731216;
 }
 .home-page .hero-bg img {
+  object-fit: cover;
   object-position: center;
   filter: none;
   animation: none;
 }
 .home-page .hero-overlay {
-  justify-content: flex-start;
-  padding: clamp(205px, 48vh, 370px) 24px 0;
+  justify-content: flex-end;
+  padding: 0 24px clamp(48px, 7vh, 72px);
 }
 .home-page .hero-overlay::before {
   display: none;
@@ -363,16 +364,34 @@ button {
   color: #fff6ec;
 }
 @media (max-width: 900px) {
+  .home-page .hero {
+    height: auto;
+    min-height: 0;
+  }
+  .home-page .hero-bg {
+    position: relative;
+    inset: auto;
+  }
+  .home-page .hero-bg img {
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+  }
   .home-page .hero-overlay {
-    padding-top: clamp(180px, 43vh, 300px);
+    position: relative;
+    inset: auto;
+    margin-top: 0;
+    justify-content: center;
+    padding: 32px 24px 40px;
+    background: #731216;
   }
 }
 @media (max-width: 560px) {
   .home-page .nav-left img {
     width: 135px;
   }
-  .home-page .hero {
-    min-height: 560px;
+  .home-page .hero-overlay {
+    padding: 28px 20px 36px;
   }
   .home-page .hero h1 {
     font-size: clamp(23px, 7vw, 31px);
@@ -394,7 +413,7 @@ button {
   background: #fff2df;
 }
 .values-content {
-    /* border: 2px solid yellow; */
+  /* border: 2px solid yellow; */
   position: relative;
   z-index: 1;
   max-width: 1000px;
