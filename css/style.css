@@ -60,17 +60,18 @@ button {
   top: 0;
   left: 0;
   right: 0;
+  width: 100%;
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 7.7%;
-  background: rgba(113, 31, 31, 0.92);
+  padding: clamp(10px, 2vw, 20px) 7.7%;
+  background: rgba(113, 31, 31, 0.96);
   box-shadow: none;
 }
 .nav-left img {
-  width: 85px;
-  height: 85px;
+  width: clamp(56px, 8vw, 85px);
+  height: auto;
   object-fit: contain;
 }
 .nav-links {
@@ -387,9 +388,6 @@ button {
   }
 }
 @media (max-width: 560px) {
-  .home-page .nav-left img {
-    width: 135px;
-  }
   .home-page .hero-overlay {
     padding: 28px 20px 36px;
   }
@@ -1431,7 +1429,10 @@ footer {
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 900px) {
   .navbar {
-    padding: 20px 6%;
+    padding: 10px 6%;
+  }
+  .navbar .nav-left img {
+    width: clamp(52px, 9vw, 72px);
   }
   .nav-links {
     position: absolute;
