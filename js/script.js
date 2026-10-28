@@ -388,6 +388,48 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* ---------- Gallery lightbox ---------- */
+  var galleryLightbox = document.getElementById('galleryLightbox');
+  var galleryLightboxImage = document.getElementById('galleryLightboxImage');
+  var galleryLightboxClose = document.getElementById('galleryLightboxClose');
+  if (galleryLightbox && galleryLightboxImage) {
+    function openGalleryLightbox(image) {
+      galleryLightboxImage.src = image.currentSrc || image.src;
+      galleryLightboxImage.alt = image.alt;
+      galleryLightbox.classList.add('show');
+      galleryLightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      if (galleryLightboxClose) galleryLightboxClose.focus();
+    }
+    function closeGalleryLightbox() {
+      galleryLightbox.classList.remove('show');
+      galleryLightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      galleryLightboxImage.src = '';
+    }
+    document.querySelectorAll('.gallery-item img').forEach(function (image) {
+      var item = image.closest('.gallery-item');
+      if (item) {
+        item.addEventListener('click', function () { openGalleryLightbox(image); });
+        item.addEventListener('keydown', function (event) {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openGalleryLightbox(image);
+          }
+        });
+      }
+    });
+    if (galleryLightboxClose) galleryLightboxClose.addEventListener('click', closeGalleryLightbox);
+    galleryLightbox.addEventListener('click', function (event) {
+      if (event.target === galleryLightbox) closeGalleryLightbox();
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && galleryLightbox.classList.contains('show')) {
+        closeGalleryLightbox();
+      }
+    });
+  }
+
   /* ---------- Video spotlight ---------- */
   var spotlightTrack = document.getElementById('spotlightTrack');
   if (spotlightTrack) {
