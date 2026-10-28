@@ -320,6 +320,10 @@ document.addEventListener('DOMContentLoaded', function () {
         btn.classList.add('active');
         btn.setAttribute('aria-pressed', 'true');
         var filter = btn.getAttribute('data-filter');
+        var categoryName = document.querySelector('.shop-category-name');
+        if (categoryName) {
+          categoryName.textContent = filter === 'all' ? 'All' : 'Maroon Launch';
+        }
         shopCards.forEach(function (card) {
           card.style.display = filter === 'all' || card.getAttribute('data-category') === filter ? '' : 'none';
         });
