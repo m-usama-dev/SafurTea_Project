@@ -302,6 +302,31 @@ document.addEventListener('DOMContentLoaded', function () {
   buildCartDrawer();
   renderCartDrawer(getCart());
 
+  /* ---------- Shop category filter ---------- */
+  var shopFilterBtns = document.querySelectorAll('.shop-filter-btn');
+  if (shopFilterBtns.length) {
+    var shopCards = document.querySelectorAll('.shop-product-card');
+    shopCards.forEach(function (card) {
+      if (!card.getAttribute('data-category')) {
+        card.setAttribute('data-category', 'maroon-launch');
+      }
+    });
+    shopFilterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        shopFilterBtns.forEach(function (item) {
+          item.classList.remove('active');
+          item.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+        var filter = btn.getAttribute('data-filter');
+        shopCards.forEach(function (card) {
+          card.style.display = filter === 'all' || card.getAttribute('data-category') === filter ? '' : 'none';
+        });
+      });
+    });
+  }
+
   /* ---------- Career category filter ---------- */
   var filterBtns = document.querySelectorAll('.career-filter-btn');
   if (filterBtns.length) {
