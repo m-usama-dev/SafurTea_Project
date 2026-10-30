@@ -642,7 +642,7 @@
 .partners-track {
   display: flex;
   align-items: center;
-  gap: 180px;
+  gap: 120px;
   width: max-content;
   animation: partners-scroll 18s linear infinite;
 }
