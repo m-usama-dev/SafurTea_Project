@@ -436,10 +436,10 @@
 .shop-promise-grid {
   max-width: 1100px;
   margin: 0 auto;
-  display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 54px;
   text-align: center;
+  display: flex;
 }
 .shop-promise-item {
   background: var(--cream);
