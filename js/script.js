@@ -357,10 +357,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ---------- Job details modal ---------- */
-  var dsrDetailsBtn = document.getElementById('dsrDetailsBtn');
-  var jobModal = document.getElementById('jobModal');
-  if (dsrDetailsBtn && jobModal) {
-    var jobModalClose = document.getElementById('jobModalClose');
+  function setupJobModal(buttonId, modalId, closeId) {
+    var detailsBtn = document.getElementById(buttonId);
+    var jobModal = document.getElementById(modalId);
+    if (!detailsBtn || !jobModal) return;
+
+    var jobModalClose = document.getElementById(closeId);
     function openJobModal(e) {
       e.preventDefault();
       jobModal.classList.add('show');
@@ -372,7 +374,7 @@ document.addEventListener('DOMContentLoaded', function () {
       jobModal.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
     }
-    dsrDetailsBtn.addEventListener('click', openJobModal);
+    detailsBtn.addEventListener('click', openJobModal);
     if (jobModalClose) {
       jobModalClose.addEventListener('click', closeJobModal);
     }
@@ -387,6 +389,9 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+
+  setupJobModal('dsrDetailsBtn', 'jobModal', 'jobModalClose');
+  setupJobModal('zsmDetailsBtn', 'zsmJobModal', 'zsmJobModalClose');
 
   /* ---------- Gallery lightbox ---------- */
   var galleryLightbox = document.getElementById('galleryLightbox');
